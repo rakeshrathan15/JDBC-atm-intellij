@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             version="3.0">
+    <persistence-unit name="bankPU" transaction-type="RESOURCE_LOCAL">
+
+        <!-- Specify the entity classes here -->
+        <class>com.neoteric.fullstackdemo_31082024.model.AccountEntity</class>
+        <class>com.neoteric.fullstackdemo_31082024.model.AccountAddressEntity</class>
+
+        <!-- Configuration for database connection -->
+        <properties>
+            <!-- JDBC Database Connection Details -->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bank"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="rakesh"/>
+
+            <!-- Hibernate Properties -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+
+    </persistence-unit>
+</persistence>

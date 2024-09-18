@@ -7,18 +7,15 @@ import com.bank.account.atm.model.Account;
 import com.bank.account.atm.model.User;
 import com.bank.account.atm.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @CrossOrigin("*")
 @RestController
 public class AccountController {
-
 
     @PostMapping(value="/api/createAccount",
       consumes = "application/json",
@@ -56,5 +53,7 @@ public class AccountController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
     }
+
+
 
 }

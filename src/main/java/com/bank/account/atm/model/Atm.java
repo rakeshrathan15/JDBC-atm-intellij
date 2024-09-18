@@ -24,4 +24,5 @@ public class Atm {
         this.cvv = cvv;
         this.cardExpiry = cardExpiry;
     }
+
 }
